@@ -4,8 +4,6 @@ String portName = "COM3";
 Serial port;
 int paddleX = 0;
 PFont font;
-float textX = 500; //temp text locations
-float textY = 350;
 
 void setup(){
  
@@ -21,14 +19,12 @@ void setup(){
 
 void draw(){
   
-  background(0, 0, 0);
-  rect(100, 100, 100, 100);
+  background(255, 255, 255);
   
   if(port.available() > 0){
     
-    paddleX = port.read();
+    paddleX = (int)map(port.read(), 0, 255, 0, 800);
     port.clear();
   }
-  text(paddleX, textX, textY);
   println(paddleX);
 }

@@ -9,6 +9,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  testOut = analogRead(inputPin);
-  Serial.println(testOut);
+  testOut = map(analogRead(inputPin),0, 1023, 0, 255);
+  Serial.write(testOut);
 }
