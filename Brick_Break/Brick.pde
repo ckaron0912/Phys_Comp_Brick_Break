@@ -14,15 +14,17 @@ class Brick{
   }
   
   void update(){
-    
+    if(active)
+    {
+      noStroke();
+      fill(clr);
+      rect(x, y, w, h);
+    }
   }
   
-  void draw(){
-    
-  }
   
-  boolean collidesWith(int ball){
-    
-    return false;
+  void collidesWith()
+  {
+    active=false;
   }
 }
