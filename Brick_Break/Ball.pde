@@ -1,38 +1,46 @@
 class Ball
 {
-
-  float x; 
-  float y; 
-  float vx; 
-  float vy; 
+  PVector position;
+  PVector velocity;
   float diameter; 
+  color clr;
   
   Ball()
   {
-    x = 400;
-    y = 250;
-    vx = 0; 
-    vy = 3; 
+    position = new PVector(400, 300);
+    velocity = new PVector(2, 3);
     diameter = 10;
+    clr = color(0, 0, 0);
   }
-
 
   void update()
   {
     noStroke();
-    fill(255);
-    ellipse(x, y, diameter, diameter);
+    fill(clr);
+    ellipse(position.x, position.y, diameter, diameter);
 
-    y += vy; 
-    x += vx; 
+    position.add(velocity);
+    
+    inBounds();
   }
-
 
   void reset()
   {
-    x = 400;
-    y = 250;
-    vx = 0;
-    vy = 3;
+    position = new PVector(random(50, 750), 300);
+    velocity = new PVector(random(-3, 3), 3);
+  }
+  
+  void inBounds()
+  {
+    //Wall Collisions
+    if (b1.position.x + b1.diameter / 2 >= width || b1.position.x - b1.diameter / 2 <= 0)
+    {
+      b1.velocity.x *= -1;
+    }
+    //Ceiling Collision
+    if (b1.position.y - b1.diameter / 2 <= 0)
+    {
+      b1.velocity.y *= -1;
+    } 
   }
 }
