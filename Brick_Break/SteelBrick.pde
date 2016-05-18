@@ -4,6 +4,7 @@ class SteelBrick extends Brick
   {
     super(_x, _y);
     clr = color(128, 128, 128);
+    type = "steel";
   }
   
   boolean collidesWith(Ball b1)

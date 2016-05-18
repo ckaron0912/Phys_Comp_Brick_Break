@@ -3,6 +3,7 @@ class Brick{
   int x, y, w, h;
   color clr;
   boolean active;
+  String type = "normal";
   
   Brick(int _x, int _y){
     

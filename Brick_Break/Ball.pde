@@ -3,15 +3,18 @@ class Ball
   PVector position;
   PVector velocity;
   float diameter; 
+  float r;
   color clr;
   boolean isPowerupActive;
-  float defaultSpeed = 3;
+  float defaultSpeed = 4;
   
   Ball()
   {
     position = new PVector(400, 300);
-    velocity = new PVector(2, defaultSpeed);
+    velocity = new PVector(2, -3);
+    velocity.setMag(defaultSpeed);
     diameter = 10;
+    r = diameter/2;
     clr = color(0, 0, 0);
     isPowerupActive = false;
   }
@@ -30,7 +33,8 @@ class Ball
   void reset()
   {
     position = new PVector(random(50, 750), 300);
-    velocity = new PVector(random(-3, 3), defaultSpeed);
+    velocity = new PVector(random(-3, 3), random(-2, -5));
+    velocity.setMag(defaultSpeed);
     clr = color(0, 0, 0);
     noPowerup();
   }
@@ -58,5 +62,6 @@ class Ball
   void slow()
   {
     isPowerupActive = true;
-    velocity.y = defaultSpeed / 2;;  }
+    velocity.setMag(defaultSpeed / 2);
+  }
 }

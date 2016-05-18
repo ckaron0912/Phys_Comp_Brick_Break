@@ -4,6 +4,7 @@ class SlowBrick extends Brick
   {
     super(_x, _y);
     clr = color(171, 144, 212);
+    type = "slow";
   }
   
   boolean collidesWith(Ball b1)
