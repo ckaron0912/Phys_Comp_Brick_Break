@@ -59,7 +59,14 @@ void makeBricks()
   {
     for (int j = 0; j< columns; j++)
     {
-      bricks[i][j] = new Brick((j+2)*65, (i+3)*25); 
+      if(i == rows - 1 && j % 2 == 0)
+        bricks[i][j] = new SteelBrick((j+2)*65, (i+3)*25);
+        
+      else if(i == rows - 1 && j % 2 == 1)
+        bricks[i][j] = new SlowBrick((j+2)*65, (i+3)*25);
+      
+      else
+        bricks[i][j] = new Brick((j+2)*65, (i+3)*25);
     }
   }
 }
