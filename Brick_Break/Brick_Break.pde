@@ -25,7 +25,7 @@ void setup(){
   noStroke();
   // #1 in Serial.list() usually FTdiameterI adaptor
   //println(Serial.list());
-  portName = Serial.list()[1];
+  portName = Serial.list()[0];
   port = new Serial(this, portName, 9600);
   makeBricks();
 }

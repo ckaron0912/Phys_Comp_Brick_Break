@@ -35,6 +35,7 @@ class Brick{
       score += 1;
       return true;
     }
+
     //Top
     if (b1.position.y + b1.diameter / 2 >= this.y && b1.position.y - b1.diameter /2 <= this.y + this.h/2 && b1.position.x >= this.x && b1.position.x <= this.x + this.w && this.active) 
     {
@@ -44,6 +45,7 @@ class Brick{
       score += 1;
       return true;
     }
+
     //Left
     if (b1.position.x + b1.diameter / 2 >= this.x && b1.position.x + b1.diameter / 2 <= this.x + this.w / 2 && b1.position.y >= this.y && b1.position.y <= this.y + this.h  && this.active)
     {
@@ -53,6 +55,7 @@ class Brick{
       score += 1;
       return true;
     }
+
     //Right
     if (b1.position.x - b1.diameter/2 <= this.x + this.w && b1.position.x +b1.diameter / 2 >= this.x + this.w / 2 && b1.position.y >= this.y && b1.position.y <= this.y + this.h  && this.active)
     {
